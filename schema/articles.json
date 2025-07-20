@@ -1,0 +1,98 @@
+{
+  "apiId": "articles",
+  "name": "記事",
+  "fields": [
+    {
+      "fieldId": "title",
+      "displayName": "タイトル",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "body",
+      "displayName": "本文",
+      "kind": "richEditor",
+      "required": true
+    },
+    {
+      "fieldId": "youtubeId",
+      "displayName": "YouTube動画ID",
+      "kind": "text",
+      "required": false
+    },
+    {
+      "fieldId": "category",
+      "displayName": "カテゴリ",
+      "kind": "select",
+      "required": true,
+      "selectItems": [
+        {
+          "value": "tutorial",
+          "text": "チュートリアル"
+        },
+        {
+          "value": "interview",
+          "text": "インタビュー"
+        },
+        {
+          "value": "case-study",
+          "text": "事例"
+        },
+        {
+          "value": "news",
+          "text": "ニュース"
+        }
+      ]
+    },
+    {
+      "fieldId": "eyecatch",
+      "displayName": "アイキャッチ画像",
+      "kind": "media",
+      "required": false
+    },
+    {
+      "fieldId": "tags",
+      "displayName": "タグ",
+      "kind": "select",
+      "required": false,
+      "multiple": true,
+      "selectItems": [
+        {
+          "value": "javascript",
+          "text": "JavaScript"
+        },
+        {
+          "value": "react",
+          "text": "React"
+        },
+        {
+          "value": "nextjs",
+          "text": "Next.js"
+        },
+        {
+          "value": "problem-solving",
+          "text": "問題解決"
+        },
+        {
+          "value": "career",
+          "text": "キャリア"
+        }
+      ]
+    },
+    {
+      "fieldId": "summary",
+      "displayName": "概要（SEO用）",
+      "kind": "textArea",
+      "required": false,
+      "textSizeLimitValidation": {
+        "textSize": 160
+      }
+    },
+    {
+      "fieldId": "publishedAt",
+      "displayName": "公開日時",
+      "kind": "date",
+      "required": true
+    }
+  ]
+}

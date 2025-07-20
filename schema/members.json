@@ -1,0 +1,30 @@
+{
+  "apiId": "members",
+  "name": "メンバー",
+  "fields": [
+    {
+      "fieldId": "name",
+      "displayName": "名前",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "position",
+      "displayName": "役職",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "bio",
+      "displayName": "経歴・プロフィール",
+      "kind": "richEditor",
+      "required": false
+    },
+    {
+      "fieldId": "photo",
+      "displayName": "写真",
+      "kind": "media",
+      "required": false
+    }
+  ]
+}
