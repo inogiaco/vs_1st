@@ -12,6 +12,10 @@ const config: Config = {
         primary: '#1D4ED8', // TODO: アクセントカラー決定後に変更
       },
     },
+    container: {
+      center: true,
+      padding: '1rem',
+    },
   },
   plugins: [],
 }

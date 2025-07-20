@@ -3,7 +3,7 @@ export interface Article {
   title: string
   body: string
   youtubeId?: string
-  category: 'tutorial' | 'interview' | 'case-study' | 'news'
+  category: string[]
   eyecatch?: {
     url: string
     width: number
@@ -12,8 +12,10 @@ export interface Article {
   tags?: string[]
   summary?: string
   publishedAt: string
+  publishAt?: string
   createdAt: string
   updatedAt: string
+  revisedAt: string
 }
 
 export interface Member {
@@ -28,4 +30,6 @@ export interface Member {
   }
   createdAt: string
   updatedAt: string
+  publishedAt: string
+  revisedAt: string
 }
