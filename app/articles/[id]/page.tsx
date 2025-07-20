@@ -53,12 +53,15 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         {/* YouTube Embed */}
         {article.youtubeId && (
           <div className="mb-8">
-            <div className="aspect-video">
+            <h3 className="text-lg font-semibold mb-4">関連動画</h3>
+            <div className="aspect-video bg-black rounded-lg overflow-hidden">
               <iframe
-                src={`https://www.youtube.com/embed/${article.youtubeId}`}
-                title={article.title}
-                className="w-full h-full rounded-lg"
+                src={`https://www.youtube.com/embed/${article.youtubeId}?rel=0&modestbranding=1`}
+                title={`${article.title} - 関連動画`}
+                className="w-full h-full"
                 allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                loading="lazy"
               />
             </div>
           </div>
