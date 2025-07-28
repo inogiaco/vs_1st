@@ -1,5 +1,7 @@
 import { getArticles, getMembers } from '@/lib/microcms'
 import Link from 'next/link'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const revalidate = 60
 
@@ -13,7 +15,9 @@ export default async function HomePage() {
     const latestArticles = articles.slice(0, 3)
 
     return (
-      <main className="container mx-auto px-4 py-8">
+      <>
+        <Header />
+        <main className="container mx-auto px-4 py-8">
         {/* Hero Section */}
         <section className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">問題解決:ようは会ラジオ</h1>
@@ -78,17 +82,23 @@ export default async function HomePage() {
             </Link>
           </div>
         </section>
-      </main>
+        </main>
+        <Footer />
+      </>
     )
   } catch (error) {
     return (
-      <main className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-8">問題解決:ようは会ラジオ</h1>
-        <div className="text-center">
-          <p className="text-red-500 mb-4">データの読み込みに失敗しました</p>
-          <p className="text-sm text-gray-500">環境変数とmicroCMSの設定を確認してください</p>
-        </div>
-      </main>
+      <>
+        <Header />
+        <main className="container mx-auto px-4 py-8">
+          <h1 className="text-4xl font-bold text-center mb-8">問題解決:ようは会ラジオ</h1>
+          <div className="text-center">
+            <p className="text-red-500 mb-4">データの読み込みに失敗しました</p>
+            <p className="text-sm text-gray-500">環境変数とmicroCMSの設定を確認してください</p>
+          </div>
+        </main>
+        <Footer />
+      </>
     )
   }
 }

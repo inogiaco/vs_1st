@@ -1,5 +1,7 @@
 import { getMembers } from '@/lib/microcms'
 import Link from 'next/link'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const revalidate = 60
 
@@ -8,7 +10,9 @@ export default async function MembersPage() {
     const members = await getMembers()
     
     return (
-      <main className="container mx-auto px-4 py-8">
+      <>
+        <Header />
+        <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-4">メンバー紹介</h1>
           <Link href="/" className="text-primary hover:underline">
@@ -66,19 +70,25 @@ export default async function MembersPage() {
             ホームに戻る
           </Link>
         </div>
-      </main>
+        </main>
+        <Footer />
+      </>
     )
   } catch (error) {
     return (
-      <main className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4">メンバー紹介</h1>
-        <div className="text-center py-12">
-          <p className="text-red-500 mb-4">メンバー情報の読み込みに失敗しました</p>
-          <Link href="/" className="text-primary hover:underline">
-            ホームに戻る
-          </Link>
-        </div>
-      </main>
+      <>
+        <Header />
+        <main className="container mx-auto px-4 py-8">
+          <h1 className="text-3xl font-bold mb-4">メンバー紹介</h1>
+          <div className="text-center py-12">
+            <p className="text-red-500 mb-4">メンバー情報の読み込みに失敗しました</p>
+            <Link href="/" className="text-primary hover:underline">
+              ホームに戻る
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </>
     )
   }
 }
